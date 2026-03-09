@@ -8,7 +8,7 @@ int main()
     while (i == 0)
     {
 
-        do
+        do // Loop to ensure valid operation selection
         {
 
             printf("Select an operation to perform:\n");
