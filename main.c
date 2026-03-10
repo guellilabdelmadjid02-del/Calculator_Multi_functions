@@ -20,7 +20,7 @@ int main()
             printf("5. Solve a quadratic equation\n");
             printf("6. Exit\n");
             scanf("%d", &oper);
-            sleep(1);
+            // sleep(1);
             system("cls");
             if (oper < 1 || oper > 6)
             {
