@@ -49,15 +49,11 @@ int main()
             printf("the product is: %d", multiply(num1, num2));
             break;
         case 4:
-            if (num2 != 0)
-            {
-                printf("the quotient is: %d", divide(num1, num2));
-            }
-            else
-            {
-                printf("Error: Division by zero is not allowed.");
-            }
+
+            printf("%d", divide(num1, num2));
+
             break;
+
         default:
             printf("Invalid operation selected.");
         }
