@@ -12,7 +12,8 @@ int main()
         do // Loop to ensure valid operation selection
         {
             printf("________________Welcome to the CLI Calculator!___________hh_____\n");
-            printf("Select an operation to perform:\n");
+            printf()
+                printf("Select an operation to perform:\n");
             printf("1. Addition\n");
             printf("2. Subtraction\n");
             printf("3. Multiplication\n");
