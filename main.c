@@ -73,6 +73,7 @@ int main()
             system("cls");
 
             printf("%d", divide(num1, num2));
+            break;
         case 5:
             equation();
 
