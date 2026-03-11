@@ -6,95 +6,139 @@
 int main()
 {
     int oper, num1, num2, i = 0;
+    printf(" \033[1;94m Welcome to the CLI Calculator devloped by: GUELLIL   \033[0m\n");
+    printf(" \033[1;94m Press any key to continue...   \033[0m\n");
+    getchar();
+
     while (i == 0)
+
     {
 
         do // Loop to ensure valid operation selection
         {
-            printf("________________Welcome to the CLI Calculator!___________hh_____\n");
-            printf()
-                printf("Select an operation to perform:\n");
-            printf("1. Addition\n");
-            printf("2. Subtraction\n");
-            printf("3. Multiplication\n");
-            printf("4. Division\n");
-            printf("5. Solve a quadratic equation\n");
-            printf("6. Exit\n");
+
+            printf("________________Welcome to the CLI Calculator! ________________\n");
+
+            printf("| \033[1;32m              Select an operation to perform:  \033[0m             |\n");
+            printf("|   \033[1;36m        1. Addition                            \033[0m           | \n");
+            printf("|   \033[1;36m        2. Subtraction                           \033[0m         | \n");
+            printf("|   \033[1;36m        3. Multiplication                          \033[0m       | \n");
+            printf("|   \033[1;36m        4. Division                            \033[0m           | \n");
+            printf("|   \033[1;36m        5. Solve a quadratic equation              \033[0m       | \n");
+            printf("|   \033[1;36m        6. Exit                                \033[0m           | \n");
+            printf("_______________________________________________________________\n");
             scanf("%d", &oper);
             // sleep(1);
             system("cls");
             if (oper < 1 || oper > 6)
             {
-                printf("Invalid operation. Please select a number between 1 and 6.\n");
+                printf(" \033[1;91mInvalid operation. Please select a number between 1 and 6.\033[0m\n");
             }
         } while (oper < 1 || oper > 6);
 
         if (oper == 6)
         {
-            printf("Exiting the calculator. Goodbye!\n");
+
+            printf("  \033[1;93m Exiting the calculator. Goodbye!     ('__') \033[0m  \n");
+            sleep(2);
+
+            printf("preess any key to continue...");
+            getchar();
+
             return 0;
         }
 
         switch (oper)
         {
         case 1:
-            printf("the first number: \n");
+            printf("\033[1;95m the first number: \033[0m \n");
             scanf("%d", &num1);
             system("cls");
-            printf("the second number: \n");
+            printf("\033[1;95m the second number: \033[0m \n");
             scanf("%d", &num2);
             system("cls");
             printf("the sum is: %d", add(num1, num2));
             break;
         case 2:
-            printf("the first number: \n");
+            printf("\033[1;95m the first number: \033[0m  \n");
             scanf("%d", &num1);
             system("cls");
-            printf("the second number: \n");
+            printf("\033[1;95m the second number: \033[0m \n");
             scanf("%d", &num2);
             system("cls");
 
             printf("the difference is: %d", subtract(num1, num2));
             break;
         case 3:
-            printf("the first number: \n");
+            printf("\033[1;95m the first number: \033[0m \n");
             scanf("%d", &num1);
             system("cls");
-            printf("the second number: \n");
+            printf("\033[1;95m the second number: \033[0m \n");
             scanf("%d", &num2);
             system("cls");
-            printf("the product is: %d", multiply(num1, num2));
+            printf(" \033[1;95mthe product is: %d\033[0m", multiply(num1, num2));
             break;
         case 4:
-            printf("the first number: \n");
-            scanf("%d", &num1);
+            printf("\033[1;95m the first number: \033[0m  ");
+            scanf("%f", &num1);
             system("cls");
-            printf("the second number: \n");
-            scanf("%d", &num2);
+            printf("\033[1;95m the second number: \033[0m  ");
+            scanf("%f", &num2);
             system("cls");
+            if (num2 == 0)
+            {
+                do // Loop to ensure valid division selection
+                {
+                    printf(" \033[1;91mError: Division by zero is not allowed. Please enter a non-zero divisor.\033[0m\n");
+                    printf("\033[1;95m the second number: \033[0m  ");
+                    scanf("%f", &num2);
+                    system("cls");
+                } while (num2 == 0);
+                printf(" \033[1;95mthe quotient is: %f\033[0m \n", num1 / num2);
+            }
 
-            printf("%d", divide(num1, num2));
+            else
+            {
+
+                printf(" \033[1;95mthe quotient is: %f\033[0m \n", num1 / num2);
+            }
             break;
+
         case 5:
             equation();
 
             break;
 
         default:
-            printf("Invalid operation selected.");
+            printf(" \033[1;91mInvalid operation selected. Please try again.\033[0m\n");
         }
 
-        printf("\nDo you want to perform another calculation? (0 for Yes, 1 for No): ");
-        scanf("%d", &i);
-        system("cls");
-        if (i != 1 && i != 0)
+        char b;
+        printf("\n \033[1;93mDo you want to perform another calculation? (y for Yes, n for No): \033[0m"); // Loop to ensure valid input for performing another calculation
+        scanf(" %c", &b);
+
+        printf("\033[A");
+        printf("\033[2K");
+
+        printf("\033[A");
+        printf("\033[2K");
+        do
         {
-            printf("Invalid input. Please enter 1 for Yes or 0 for No.\n");
+            printf(" \033[1;91mInvalid input. Please enter 'y' for Yes or 'n' for No.\033[0m ");
+            scanf(" %c", &b);
+            system("cls");
+        } while (b != 'y' && b != 'n' && b != 'Y' && b != 'N');
+        if (b == 'N' || b == 'n')
+        {
+            i = 1;
+            printf(" \033[1;93mExiting the calculator. Goodbye!\033[0m\n");
+            sleep(2);
         }
-        else if (i == 1)
+        else if (b == 'Y' || b == 'y')
         {
-            printf("Exiting the calculator. Goodbye!\n");
+            continue;
         }
     }
+
     return 0;
 }
