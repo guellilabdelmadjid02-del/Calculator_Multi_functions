@@ -59,7 +59,7 @@ calculator.exe
 
 ## Screen Shots
 
-```<img width="642" height="326" alt="Screenshot 2026-03-12 134820" src="https://github.com/user-attachments/assets/eb1402de-cca9-4db3-8d6b-e05cefb9a590" />
+<img width="642" height="326" alt="Screenshot 2026-03-12 134820" src="https://github.com/user-attachments/assets/eb1402de-cca9-4db3-8d6b-e05cefb9a590" />
 
 ## Author
 
