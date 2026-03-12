@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "equation.h"
+#include "../include/equations.h"
 #include <unistd.h>
-#include "base.h"
 int base();
 int base()
 {

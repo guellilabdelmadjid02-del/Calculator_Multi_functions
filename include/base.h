@@ -1,5 +1,14 @@
-#define base_h
-#ifndef base_h
+#ifndef BASE_H
+#define BASE_H
 
+/**
+ * @brief Main menu function for the CLI Calculator.
+ *
+ * This function handles the user interface, operation selection,
+ * and calls the appropriate calculation functions.
+ *
+ * @return int 0 if the user exits successfully, 1 if an error occurs.
+ */
 int base();
-#endif // base_h
+
+#endif // BASE_H
