@@ -56,20 +56,10 @@ On Windows:
 calculator.exe
 ```
 
-## Example
 
-```
-Welcome to the CLI Calculator
+## Screen Shots
 
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
-5. Solve a quadratic equation
-6. Exit
-
-Select an operation:
-```
+```<img width="642" height="326" alt="Screenshot 2026-03-12 134820" src="https://github.com/user-attachments/assets/eb1402de-cca9-4db3-8d6b-e05cefb9a590" />
 
 ## Author
 
