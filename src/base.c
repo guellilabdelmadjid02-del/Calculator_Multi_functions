@@ -27,6 +27,7 @@ int base()
             printf("|   \033[1;36m        5. Solve a quadratic equation              \033[0m       | \n");
             printf("|   \033[1;36m        6. Exit                                \033[0m           | \n");
             printf("_______________________________________________________________\n");
+            printf(" \033[1;93mEnter the number corresponding to the desired operation: \033[0m  ");
             scanf("%d", &oper);
             // sleep(1);
             system("cls");
@@ -80,27 +81,26 @@ int base()
             break;
         case 4:
             printf("\033[1;95m the first number: \033[0m  ");
-            scanf("%f", &num1);
+            scanf("%d", &num1);
             system("cls");
             printf("\033[1;95m the second number: \033[0m  ");
-            scanf("%f", &num2);
+            scanf("%d", &num2);
             system("cls");
             if (num2 == 0)
             {
+
                 do // Loop to ensure valid division selection
                 {
                     printf(" \033[1;91mError: Division by zero is not allowed. Please enter a non-zero divisor.\033[0m\n");
                     printf("\033[1;95m the second number: \033[0m  ");
-                    scanf("%f", &num2);
+                    scanf("%d", &num2);
                     system("cls");
                 } while (num2 == 0);
-                printf(" \033[1;95mthe quotient is: %f\033[0m \n", num1 / num2);
             }
 
             else
             {
-
-                printf(" \033[1;95mthe quotient is: %f\033[0m \n", num1 / num2);
+                printf(" \033[1;95mthe quotient is: %f\033[0m \n", divide(num1, num2));
             }
             break;
 
@@ -122,17 +122,26 @@ int base()
 
         printf("\033[A");
         printf("\033[2K");
-        do
+
+        printf("\033[A");
+        printf("\033[2K");
+
+        if (b != 'y' && b != 'n' && b != 'Y' && b != 'N')
         {
-            printf(" \033[1;91mInvalid input. Please enter 'y' for Yes or 'n' for No.\033[0m ");
-            scanf(" %c", &b);
-            system("cls");
-        } while (b != 'y' && b != 'n' && b != 'Y' && b != 'N');
+
+            do
+            {
+                printf(" \033[1;91mInvalid input. Please enter 'y' for Yes or 'n' for No.\033[0m ");
+                scanf(" %c", &b);
+                system("cls");
+            } while (b != 'y' && b != 'n' && b != 'Y' && b != 'N');
+        }
         if (b == 'N' || b == 'n')
         {
-            i = 1;
             printf(" \033[1;93mExiting the calculator. Goodbye!\033[0m\n");
             sleep(2);
+            system("cls");
+            i = 1;
         }
         else if (b == 'Y' || b == 'y')
         {
